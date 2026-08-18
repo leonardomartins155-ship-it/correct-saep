@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Collision.gameObject.CompareTag("chao"))
         {
-            estaNoChao =false;
+            estaNoChao = false;
+            animator.SetBool("pulando", true);
         }
     }
     void OnCollisionEnter2D(Collision2D Collision)
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (Collision.gameObject.CompareTag("chao"))
         {
             estaNoChao = true;
+            animator.SetBool("pulando", false);
         }
     }
-
 }
